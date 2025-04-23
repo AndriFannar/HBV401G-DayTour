@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<fx:root fx:id="card" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+         prefHeight="316.0" prefWidth="247.0" style="-fx-background-color: #37C6C7#37C6C7;"
+         type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+   <ImageView fx:id="event_img" fitHeight="168.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true"/>
+   <Label fx:id="event" layoutX="14.0" layoutY="178.0" prefHeight="24.0" prefWidth="221.0">
+      <font>
+         <Font name="Arial Black" size="14.0"/>
+      </font>
+   </Label>
+   <Label fx:id="stadsetning" layoutX="16.0" layoutY="202.0" prefHeight="29.0" prefWidth="145.0">
+      <font>
+         <Font name="Arial" size="13.0"/>
+      </font>
+   </Label>
+   <Button fx:id="ferda_button" layoutX="149.0" layoutY="270.0" mnemonicParsing="false" onAction="#opna_ferd"
+           prefHeight="29.0" prefWidth="83.0" style="-fx-background-color: #EDEDED;" text="Skoða"/>
+   <Line endX="122.00001525878906" endY="-0.3333282470703125" layoutX="125.0" layoutY="165.0" startX="-125.0"
+         startY="1.52587890625E-5"/>
+   <Label fx:id="price" layoutX="54.0" layoutY="276.0" prefHeight="17.0" prefWidth="52.0">
+      <font>
+         <Font name="Arial" size="14.0"/>
+      </font>
+   </Label>
+   <Label layoutX="16.0" layoutY="276.0" prefHeight="17.0" prefWidth="41.0" text="Verð:">
+      <font>
+         <Font name="Arial" size="14.0"/>
+      </font>
+   </Label>
+   <Label layoutX="98.0" layoutY="277.0" text="kr.">
+      <font>
+         <Font name="Arial" size="14.0"/>
+      </font>
+   </Label>
+   <ImageView fx:id="rt" fitHeight="55.0" fitWidth="61.0" layoutX="172.0" layoutY="103.0" pickOnBounds="true"
+              preserveRatio="true"/>
+   <Label fx:id="rating" alignment="CENTER" contentDisplay="CENTER" layoutX="178.0" layoutY="119.0" prefHeight="24.0"
+          prefWidth="40.0">
+      <font>
+         <Font name="Arial Black" size="16.0"/>
+      </font>
+   </Label>
+</fx:root>

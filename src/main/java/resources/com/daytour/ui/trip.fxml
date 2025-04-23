@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="scroll" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" vbarPolicy="ALWAYS"
+            xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.daytour.ui.Trip">
+   <AnchorPane fx:id="pane" minHeight="0.0" minWidth="0.0" prefHeight="1385.0" prefWidth="1265.0"
+               style="-fx-background-color: #31CED4;">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="80.0" stroke="WHITE" strokeType="INSIDE"
+                 width="1265.0"/>
+      <Label layoutX="47.0" layoutY="14.0" onMouseClicked="#back_to_primary" prefHeight="17.0" prefWidth="218.0"
+             text="Day Tours">
+         <font>
+            <Font name="Arial Black" size="34.0"/>
+         </font>
+      </Label>
+      <Button layoutX="18.0" layoutY="112.0" mnemonicParsing="false" onAction="#back_to_primary"
+              style="-fx-background-color: #ffffff;" text="Til baka">
+         <font>
+            <Font name="Arial" size="12.0"/>
+         </font>
+      </Button>
+      <ImageView fx:id="trip_pic" fitHeight="331.0" fitWidth="531.0" layoutX="115.0" layoutY="212.0"
+                 pickOnBounds="true" preserveRatio="true"/>
+      <Label fx:id="tripName" layoutX="125.0" layoutY="93.0" prefHeight="61.0" prefWidth="1015.0">
+         <font>
+            <Font name="Arial Black" size="25.0"/>
+         </font>
+      </Label>
+      <Label fx:id="triploc" layoutX="773.0" layoutY="177.0" prefHeight="35.0" prefWidth="148.0">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="125.0" layoutY="555.0" prefHeight="27.0" prefWidth="273.0"
+             text="Ummæli um ferðina">
+         <font>
+            <Font name="Arial Black" size="17.0"/>
+         </font>
+      </Label>
+      <Button fx:id="fxBtnBoka" layoutX="1027.0" layoutY="474.0" mnemonicParsing="false" onAction="#book_trip" prefHeight="25.0"
+              prefWidth="112.0" style="-fx-background-color: #ffffff;" text="Bóka"/>
+      <TextArea layoutX="671.0" layoutY="319.0" prefHeight="56.0" prefWidth="468.0"/>
+      <Label layoutX="662.0" layoutY="175.0" prefHeight="40.0" prefWidth="161.0" text="Staðsetning:">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="243.0" prefHeight="22.0" prefWidth="179.0" text="Lengd: ">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="393.0" layoutY="939.0" prefHeight="19.0" prefWidth="271.0" text="Skrifa ummæli">
+         <font>
+            <Font name="Arial Black" size="16.0"/>
+         </font>
+      </Label>
+      <TextArea fx:id="review" layoutX="395.0" layoutY="1122.0" prefHeight="149.0" prefWidth="505.0"/>
+      <Button layoutX="834.0" layoutY="1292.0" mnemonicParsing="false" onAction="#post_review" prefHeight="0.0"
+              prefWidth="83.0" style="-fx-background-color: #ffffff;" text="Senda">
+         <font>
+            <Font name="Arial" size="14.0"/>
+         </font>
+      </Button>
+      <TextField fx:id="nameReview" layoutX="394.0" layoutY="1049.0" prefHeight="25.0" prefWidth="320.0"
+                 promptText="Nafn"/>
+      <Rectangle fx:id="smileyRec" arcHeight="5.0" arcWidth="5.0" fill="#93adf5" height="40.0" layoutX="800.0"
+                 layoutY="1060.0" stroke="BLACK" strokeType="INSIDE" width="40.0"/>
+      <Rectangle fx:id="dislikeRec" arcHeight="5.0" arcWidth="5.0" fill="#93adf5" height="40.0" layoutX="856.0"
+                 layoutY="1060.0" stroke="BLACK" strokeType="INSIDE" width="40.0"/>
+      <ImageView fx:id="smiley" fitHeight="40.0" fitWidth="40.0" layoutX="800.0" layoutY="1060.0"
+                 onMouseClicked="#like_dislike" pickOnBounds="true" preserveRatio="true">
+         <Image url="@assets/smiley.png"/>
+      </ImageView>
+      <ImageView fx:id="dislike" fitHeight="40.0" fitWidth="40.0" layoutX="856.0" layoutY="1062.0"
+                 onMouseClicked="#like_dislike" pickOnBounds="true" preserveRatio="true">
+         <Image url="@assets/dislike.png"/>
+      </ImageView>
+      <TextField fx:id="titleReview" layoutX="394.0" layoutY="1005.0" prefHeight="25.0" prefWidth="320.0"
+                 promptText="Titill"/>
+      <Label fx:id="notValid" layoutX="402.0" layoutY="1292.0" prefHeight="23.0" prefWidth="209.0">
+         <font>
+            <Font name="Arial" size="14.0"/>
+         </font>
+      </Label>
+      <ScrollPane hbarPolicy="NEVER" layoutX="126.0" layoutY="593.0" prefHeight="293.0" prefWidth="1032.0"
+                  vbarPolicy="ALWAYS">
+         <GridPane fx:id="listReivew" prefHeight="299.0" prefWidth="1027.0"
+                   style="-fx-background-color: #ffffff;">
+            <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+         </GridPane>
+      </ScrollPane>
+      <Label layoutX="134.0" layoutY="160.0" prefHeight="17.0" prefWidth="86.0" text="Fyrirtæki">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Label>
+      <Label fx:id="tripLength" layoutX="226.0" layoutY="153.0" prefHeight="36.0" prefWidth="287.0">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label fx:id="tripComp" layoutX="778.0" layoutY="236.0" prefHeight="36.0" prefWidth="49.0">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="215.0" prefHeight="20.0" prefWidth="109.0" text="Opnunartími:">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="778.0" layoutY="211.0" prefHeight="27.0" prefWidth="137.0">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label layoutX="662.0" layoutY="272.0" prefHeight="22.0" prefWidth="179.0" text="Verð:">
+         <font>
+            <Font name="Arial Bold" size="16.0"/>
+         </font>
+      </Label>
+      <Label fx:id="tripLength1" layoutX="793.0" layoutY="265.0" prefHeight="36.0" prefWidth="95.0">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label fx:id="tripLength11" layoutX="862.0" layoutY="265.0" prefHeight="36.0" prefWidth="69.0" text="kr.">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+      <Label fx:id="tripLength111" layoutX="853.0" layoutY="236.0" prefHeight="36.0" prefWidth="69.0"
+             text="mín/klst.">
+         <font>
+            <Font name="Arial" size="16.0"/>
+         </font>
+      </Label>
+   </AnchorPane>
+</ScrollPane>

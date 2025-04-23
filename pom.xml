@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.daytour</groupId>
+    <artifactId>daytour</artifactId>
+    <version>1.0</version>
+
+    <name>Day Tour</name>
+    <description>A simple search engine for day tours.</description>
+    <inceptionYear>2023</inceptionYear>
+    <licenses>
+        <license>
+        <name>MIT</name>
+        <url>https://spdx.org/licenses/MIT.html</url>
+        </license>
+    </licenses>
+    <organization>
+        <name>University of Iceland</name>
+        <url>https://www.hi.is</url>
+    </organization>
+
+      <developers>
+        <developer>
+            <id>andri</id>
+            <name>Andri Fannar Kristjánsson</name>
+            <email>afk6@hi.is</email>
+            <organization>University of Iceland</organization>
+        </developer>
+        <developer>
+            <id>astridur</id>
+            <name>Ástríður Haraldsdóttir Passauer</name>
+            <email>ahp9@hi.is</email>
+            <organization>University of Iceland</organization>
+        </developer>
+        <developer>
+            <id>fridrik</id>
+            <name>Friðrik Þór Ólafsson</name>
+            <email>fto2@hi.is</email>
+            <organization>University of Iceland</organization>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>21</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <junit.version>5.9.2</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>19.0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>19.0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.40.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+                <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.12.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.5.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>com.daytour.ui.App</mainClass>
+                            <launcher>DayTourLauncher</launcher>
+                            <jlinkZipName>DayTours</jlinkZipName>
+                            <jlinkImageName>DayTours</jlinkImageName>
+                            <noManPages>true</noManPages>
+                            <stripDebug>true</stripDebug>
+                            <noHeaderFiles>true</noHeaderFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.11.2</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+
+</project>

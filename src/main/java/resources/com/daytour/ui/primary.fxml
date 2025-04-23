@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="NEVER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1280.0" style="-fx-background-color: #93ADF5;" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daytour.ui.PrimaryController">
+    <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="1700.0" prefWidth="1265.0" style="-fx-background-color: #ffffff;">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1265.0" />
+        <ImageView fitHeight="460.0" fitWidth="1272.0" layoutX="-7.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@assets/banner.png" />
+        </ImageView>
+        <Label layoutX="34.0" layoutY="14.0" onMouseClicked="#refresh" prefHeight="69.0" prefWidth="255.0" text="Day Tours">
+            <font>
+                <Font name="Arial Black" size="37.0" />
+            </font>
+        </Label>
+        <TextField fx:id="tf" alignment="CENTER" layoutX="197.0" layoutY="331.0" onAction="#update" prefHeight="25.0" prefWidth="432.0" promptText="Stadsetning" />
+        <DatePicker fx:id="fxDagatal" layoutX="665.0" layoutY="331.0" prefHeight="25.0" prefWidth="210.0" />
+        <Button fx:id="leita_button" layoutX="916.0" layoutY="331.0" mnemonicParsing="false" onAction="#searchDatabase" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ffffff;" text="Leita" />
+        <GridPane fx:id="grid" layoutX="89.0" layoutY="648.0" prefHeight="342.0" prefWidth="1088.0" vgap="30.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="316.0" prefHeight="316.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="316.0" prefHeight="316.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="316.0" prefHeight="316.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+        <Label fx:id="fxDagsetning" layoutX="115.0" layoutY="583.0" prefHeight="17.0" prefWidth="369.0" text="Allar ferðir">
+            <font>
+                <Font name="Arial Black" size="20.0" />
+            </font>
+        </Label>
+        <Label layoutX="197.0" layoutY="293.0" prefHeight="28.0" prefWidth="309.0" text="Veldu staðsetningu" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="665.0" layoutY="299.0" prefHeight="21.0" prefWidth="176.0" text="Veldu dagsetningu" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="error" layoutX="197.0" layoutY="385.0" prefHeight="17.0" prefWidth="559.0" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="14.0" />
+            </font>
+        </Label>
+        <MenuBar layoutX="1088.0" layoutY="599.0" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #E5E4E2;">
+            <Menu fx:id="menu" mnemonicParsing="false" text="Síun">
+                <CheckMenuItem fx:id="check1" mnemonicParsing="false" onAction="#filterout" text="Upplifun/Ævintýri" />
+                <CheckMenuItem fx:id="check2" mnemonicParsing="false" onAction="#filterout" text="Fjölskylduvænt" />
+                <CheckMenuItem fx:id="check3" mnemonicParsing="false" onAction="#filterout" text="Bátur" />
+                <CheckMenuItem fx:id="check4" mnemonicParsing="false" onAction="#filterout" text="Safn" />
+                <CheckMenuItem fx:id="check5" mnemonicParsing="false" onAction="#filterout" text="Ganga" />
+                <CheckMenuItem fx:id="check6" mnemonicParsing="false" onAction="#filterout" text="Laug" />
+                <CheckMenuItem fx:id="check7" mnemonicParsing="false" onAction="#filterout" text="Spa" />
+            </Menu>
+        </MenuBar>
+        <RadioButton fx:id="fxRdoPop" layoutX="969.0" layoutY="604.0" mnemonicParsing="false" onAction="#orderHandler" text="Vinsældum">
+            <toggleGroup>
+                <ToggleGroup fx:id="orderBy" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton layoutX="910.0" layoutY="604.0" mnemonicParsing="false" onAction="#orderHandler" text="Tíma" toggleGroup="$orderBy" />
+        <Label layoutX="787.0" layoutY="603.0" text="Raða eftir:" />
+      <RadioButton fx:id="fxRdoPrice" layoutX="851.0" layoutY="603.0" mnemonicParsing="false" onAction="#orderHandler" text="Verði" toggleGroup="$orderBy" />
+    </AnchorPane>
+</ScrollPane>

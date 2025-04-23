@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="600.0" prefHeight="650.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daytour.ui.Book">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#afeed0" height="102.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <Label layoutX="10.0" layoutY="15.0" text="Bókun:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxNafnFerdar" layoutX="160.0" layoutY="15.0" prefHeight="63.0" prefWidth="1080.0" text="Soutch Coast and Jökulsárlón nnnnnnnnnnnnnnnnn">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxTxtDagsetning" layoutX="10.0" layoutY="140.0" prefHeight="73.0" prefWidth="270.0" text="Dagsetning:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxDagsetning" layoutX="280.0" layoutY="140.0" prefHeight="73.0" text="(Dagseting)">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="270.0" text="Tími:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="fxTimi" layoutX="120.0" layoutY="284.0" prefHeight="37.0" prefWidth="82.0" />
+      <Label layoutX="10.0" layoutY="400.0" text="Fjöldi Sæta:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxFjoldi" layoutX="220.0" layoutY="280.0">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fxValinnFjoldi" layoutX="270.0" layoutY="405.0" onKeyReleased="#keyReleasedProperty" prefHeight="26.0" prefWidth="74.0">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+      <Label fx:id="fxEkkiLeyfilegurFjoldi" layoutX="360.0" layoutY="415.0" text="Ekki Leyfilegur fjöldi" textFill="#f52a2a">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <Label layoutX="10.0" layoutY="530.0" text="Bíl frá Hóteli:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="fxSkutl" layoutX="307.0" layoutY="549.0" mnemonicParsing="false" onAction="#keyReleasedProperty">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="618.0" layoutY="140.0" text="Nafn:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fxNafn" layoutX="740.0" layoutY="145.0" onKeyReleased="#keyReleasedProperty">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+      <Label layoutX="620.0" layoutY="270.0" text="Netfang:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fxNetfang" layoutX="810.0" layoutY="275.0" onKeyReleased="#keyReleasedProperty">
+         <font>
+            <Font size="25.0" />
+         </font></TextField>
+      <RadioButton fx:id="fxKredit" layoutX="620.0" layoutY="520.0" mnemonicParsing="false" onMouseClicked="#keyReleasedProperty" text="Kredit/Debit">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="RadioBorgun" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="fxPaypal" layoutX="620.0" layoutY="555.0" mnemonicParsing="false" onMouseClicked="#keyReleasedProperty" text="PayPal" toggleGroup="$RadioBorgun">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="620.0" layoutY="400.0" text="Verð:">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label fx:id="fxLokaverd" layoutX="740.0" layoutY="400.0">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="fxBokaTakki" layoutX="1180.0" layoutY="580.0" mnemonicParsing="false" onAction="#stadfestaBokun" text="Bóka" />
+      <Button layoutX="1085.0" layoutY="580.0" mnemonicParsing="false" onAction="#back_to_primary" text="Hætta Við" />
+   </children>
+</AnchorPane>
