@@ -14,7 +14,7 @@ Users can:
 * See information on Day Tours and a photo
 * Filter Day Tours with various filters
 * Order Day Tours by price, popularity or time
-* Leave reviews
+* Write reviews
 
 ### Installation
 This Java program uses Maven to manage dependencies and build the project. The IDE should be able to handle the Maven dependencies automatically.
